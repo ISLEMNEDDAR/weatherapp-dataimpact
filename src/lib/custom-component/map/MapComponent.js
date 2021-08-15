@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import CardContainer from '../../../components/containers/CardContainer'
+import Selectors from '../../redux/selectors'
 
-function MapComponent({ position, zoom }) {
-  position = [51.505, -0.09]
+function MapComponent({ zoom }) {
+  const [position, setPosition] = useState({
+    lat: null,
+    lon: null,
+  })
+  const { coordinateSelector } = Selectors()
+
+  useEffect(() => {
+    setPosition({
+      lat: coordinateSelector.lat,
+      lon: coordinateSelector.lon,
+    })
+  }, [coordinateSelector.lon, coordinateSelector.lat])
+
   return (
     <div className="flex hall wall padh10 marv15">
       <CardContainer>

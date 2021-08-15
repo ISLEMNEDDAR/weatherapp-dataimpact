@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import * as yup from 'yup'
 import { useFormik } from 'formik'
 import ReactiveButton from 'reactive-button'
+import { useDispatch } from 'react-redux'
 import CardContainer from '../../../components/containers/CardContainer'
 import { searchIcon } from '../../../assets/icons'
 import CustomInput from '../../../components/inputs/CustomInput'
@@ -9,12 +10,16 @@ import { stringValidation } from '../../validations/validations'
 import Separator from '../../../components/separator/Separator'
 import ItemRole from '../../../components/containers/ItemRole'
 import { dataChoiceItemSearch, listChoice } from '../../data/data-choice-item-search'
+import { dispatchAction } from '../../utils/dispatch.util'
+import weatherActions from '../../redux/weather/action'
+import { searchByObject } from '../../data/weather-concepts'
+import dayWeatherActions from '../../redux/daysWeather/action'
 
-function Search() {
+function Search({ searchByCoordinate }) {
   // Hooks
   const [loading] = useState(false)
   const [choosenItem, setChoosenItem] = useState(dataChoiceItemSearch.pays)
-
+  const dispatch = useDispatch()
   // formik
   const labelCity = 'city'
   const cityValidaton = yup.object().shape({
@@ -40,6 +45,19 @@ function Search() {
   // functions
   const searchWithCityName = values => {
     console.log(values)
+    const { city } = values
+    dispatch(
+      dispatchAction(weatherActions.GET_WEATHER, {
+        city,
+        searchBy: searchByObject.city,
+      }),
+    )
+    dispatch(
+      dispatchAction(dayWeatherActions.GET_WEATHER, {
+        city,
+        searchBy: searchByObject.city,
+      }),
+    )
   }
 
   const switchItemChoice = choiceItem => {
@@ -114,6 +132,10 @@ function Search() {
               loadingText="Loading"
               buttonState={loading ? 'loading' : 'idle'}
               idleText="Utiliser position courante"
+              onClick={() => {
+                // TODO if location == current not do this
+                searchByCoordinate.searchWithCurrent()
+              }}
             />
           </div>
         </CardContainer>
