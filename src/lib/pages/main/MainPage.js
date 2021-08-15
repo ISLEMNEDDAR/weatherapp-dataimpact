@@ -7,15 +7,15 @@ import MapComponent from '../../custom-component/map/MapComponent'
 function MainPage() {
   return (
     <div className="wall">
-      <div>
+      <div className="padh10">
         <ContentHeader />
       </div>
-      <div className="flex fdr wall f2 marv20">
+      <div className="flex f2 wall marv20">
         <div className="flex f1 fdc wall">
-          <div className="flex f1 wall">
+          <div className="flex wall">
             <Search />
           </div>
-          <div className="flex f1 wall">
+          <div className="flex wall">
             <MapComponent zoom={13} />
           </div>
         </div>
