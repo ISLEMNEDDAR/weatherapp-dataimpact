@@ -1,0 +1,26 @@
+@import 'variables';
+
+.popup {
+  padding: 5px 50px 20px;
+  @media #{$xs-screen} {
+    padding: 10px;
+  }
+}
+
+.popup-container {
+  background-color: #f3f7f9;
+  border-radius: 5px;
+  // TODO
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.popup-container::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.popup-container::-webkit-scrollbar-thumb {
+  //background: #000000;
+  //height: 5px;
+}

@@ -1,0 +1,21 @@
+.input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: blue;
+}
+.input:focus {
+  border-color: green;
+}
+
+.no_txtarresize {
+  resize: none;
+}
+
+.no_textarscroll {
+  overflow: auto;
+}
+
+.border_input {
+  border: 1px solid #b4c5cd;
+  height: 40px;
+}

@@ -1,0 +1,29 @@
+//  xs: '480px',
+//$xs-screen: "(min-width : 480px) and (max-width: 575px)";
+$xs-screen: '(max-width: 575px)';
+
+//  sm: '576px',
+//$sm-screen: "(min-width : 576px) and (max-width: 767px)"; //tablette
+$sm-screen: '(max-width: 768px)';
+
+//  md: '768px',
+//$md-screen: "(min-width : 768px) and (max-width: 991px)";
+$md-screen: '(max-width: 991px)';
+
+//  lg: '992px',
+//$md-screen: "(min-width : 992px) and (max-width: 1199px)";
+$lg-screen: '(max-width: 1199px)';
+
+//  xl: '1200px',
+//$md-screen: "(min-width : 1200px) and (max-width: 1599px)";
+$xl-screen: '(max-width: 1599px)';
+
+//  xxl: '1600px',
+$xxl-screen: '(min-width : 1600px)';
+
+$small-screen: '(max-width : 425px)';
+$tablet-screen: '(min-width : 426px) and (max-width: 768px)';
+$pc-screen: '(min-width : 769px)';
+$grand_pc-screen: '(min-width : 1025px) and (max-width: 1600px)';
+$not-small-screen: '(min-width : 1199px)';
+$big-screen: '(min-width : 1599px)';

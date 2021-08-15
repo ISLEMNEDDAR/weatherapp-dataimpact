@@ -1,0 +1,16 @@
+@for $i from 0 through 100 {
+  .rounded_img_#{$i} {
+    border-radius: #{$i + '%'};
+  }
+}
+.img_cover {
+  object-fit: cover;
+}
+
+.img_contain {
+  object-fit: contain;
+}
+
+.img_fill {
+  object-fit: fill;
+}

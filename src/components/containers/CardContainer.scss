@@ -1,0 +1,9 @@
+@import 'src/lib/styles/scss/colors';
+
+.card {
+  border-color: #e4e9f0;
+  border-radius: 5px;
+  background-color: $background_white;
+  border-style: solid;
+  border-width: 1px;
+}

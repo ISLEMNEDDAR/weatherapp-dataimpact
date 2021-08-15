@@ -1,0 +1,63 @@
+.separator {
+  border-bottom: 1px solid #b4c5cd;
+  height: 0;
+  width: 120%;
+}
+.vertical-devider {
+  border-left: 1px solid #b4c5cd;
+  width: 0;
+  height: 30px;
+}
+
+.horizontal-devider {
+  border-bottom: 1px solid #b4c5cd;
+  width: 30px;
+  height: 0;
+}
+
+.underline {
+  height: 0;
+  border: 5px solid #fee005;
+  margin-top: -10px;
+  background-color: #fee005;
+}
+
+.triangle-code {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  border-top: 12px solid transparent;
+  border-right: 15px solid #f3f7f9;
+  border-bottom: 12px solid transparent;
+  margin-top: 10px;
+  transition: all 1.5s ease;
+}
+
+.triangle_up_code {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  border-right: 12px solid transparent;
+  border-bottom: 15px solid #f3f7f9;
+  border-left: 12px solid transparent;
+  margin-top: 10px;
+  transition: all 1.5s ease;
+}
+
+.no-border-input {
+  border: none;
+  outline: none;
+}
+
+.container_scrollable {
+  overflow: auto;
+}
+
+.container_scrollable::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.bordered_view {
+  border: 2px solid #3b5998;
+}

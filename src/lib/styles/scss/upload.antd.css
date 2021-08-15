@@ -1,0 +1,67 @@
+.ant-upload-list {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0,0,0,.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  list-style: none;
+  font-feature-settings: "tnum";
+  line-height: 1.5715;
+}
+[class*=ant-], [class*=ant-] *, [class*=ant-] :after, [class*=ant-] :before, [class^=ant-], [class^=ant-] *, [class^=ant-] :after, [class^=ant-] :before {
+  box-sizing: border-box;
+}
+
+.ant-upload-list-picture-container, .ant-upload-list-text-container {
+  transition: opacity .3s,height .3s;
+}
+
+.ant-upload-list-item {
+  position: relative;
+  height: 22.001px;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.ant-upload-list-item-info {
+  height: 100%;
+  padding: 0 4px;
+  transition: background-color .3s;
+}
+
+.ant-upload-list-picture .ant-upload-span, .ant-upload-list-text .ant-upload-span {
+  display: flex;
+  align-items: center;
+}
+
+.ant-upload-list-picture-container .ant-upload-span, .ant-upload-list-text-container .ant-upload-span {
+  display: block;
+  flex: auto;
+}
+
+.ant-upload-list-item-info>span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ant-upload-list-picture .ant-upload-span, .ant-upload-list-text .ant-upload-span {
+  display: flex;
+  align-items: center;
+}
+
+.ant-upload-list-picture-container .ant-upload-span, .ant-upload-list-text-container .ant-upload-span {
+  display: block;
+  flex: auto;
+}
+
+.ant-upload-list-item-info>span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ant-upload-list-picture .ant-upload-span>*, .ant-upload-list-text .ant-upload-span>* {
+  flex: none;
+}

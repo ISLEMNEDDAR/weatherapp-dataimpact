@@ -1,0 +1,121 @@
+$main_yellow: #fee005;
+$deep_main_yellow: #f4d705;
+$accent_blue: #063f58;
+$deep_accent_blue: #053246;
+$text: #042c3e;
+$text_grey: #587e8f;
+$text_white: #fff;
+$text_white80: #cfff;
+$text_white40: #6fff;
+$unselected: #e6ecef;
+$divider: #b4c5cd;
+$shadow: #14000000;
+$background: #f3f7f9;
+$background_white: $text_white;
+$background_blur: #cc022433;
+$green: #69d642;
+$red: #f87761;
+$second_red: #b00020;
+$blue_claire: #42a9d6;
+$get_your_account_verified_gradient1: #42a9d6;
+$get_your_account_verified_gradient2: #9bd9a6;
+$social_facebook: #3b5998;
+$social_twitter: #00acee;
+$social_whatsapp: #25d366;
+$social_messenger: #006aff;
+
+$blue: #063f58;
+$blue-secondary: #f3f7f9;
+$first_grey: #717171;
+$second_grey: #587e8f;
+
+$white: #fff;
+$black: #161537;
+$blue: #1b55e3;
+$blue-light: #3d6ee7;
+$gray-1: #f2f4f8;
+$gray-2: #e4e9f0;
+$gray-3: #dde2ec;
+$gray-4: #c3bedc;
+$gray-5: #aca6cc;
+$gray-6: #786fa4;
+$yellow: #ff0;
+$orange: #f2a654;
+$red: #f00;
+$pink: #fd3995;
+$purple: #652eff;
+
+$dark-1: #0e0d2c;
+$dark-2: #2a274d;
+
+$text: $gray-6;
+$border: $gray-2;
+
+// Accent colors
+$default: $gray-4;
+$primary: $blue;
+$secondary: #6a7a84;
+$success: #46be8a;
+$info: #0887c9;
+$warning: #f39834;
+$danger: #fb434a;
+$light: $gray-1;
+$dark: $black;
+
+.first_blue {
+  color: $blue;
+}
+.second-blue {
+  color: #b4c5cd;
+}
+.first_red {
+  color: #f87761;
+}
+.second_red {
+  color: $second_red;
+}
+.first_yellow {
+  color: #fee005;
+}
+.white {
+  color: #fff;
+}
+.black {
+  color: #000;
+}
+.first_grey {
+  color: $first_grey;
+}
+.second_grey {
+  color: $second_grey;
+}
+.blue_claire {
+  color: $blue_claire;
+}
+.green {
+  color: $green;
+}
+
+.bgblack {
+  background-color: black;
+}
+
+.bgred {
+  background-color: red;
+}
+
+.bgyellow {
+  background-color: yellow;
+}
+
+.bgtransparent {
+  background-color: transparent;
+}
+
+.bgWhite {
+  background-color: white;
+}
+
+.bgContainers {
+  background-color: #f3f7f9;
+}

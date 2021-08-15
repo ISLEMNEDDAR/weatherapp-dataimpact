@@ -1,0 +1,141 @@
+@import 'variables';
+
+:root {
+  --medium-font-size: 16px;
+}
+
+@font-face {
+  font-family: 'AtkinsonHyperlegible';
+  src: local('AtkinsonHyperlegible'),
+    url('../../../assets/fonts/AtkinsonHyperlegible-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AtkinsonHyperlegible-Italic';
+  src: local('AtkinsonHyperlegible-Italic'),
+    url('../../../assets/fonts/AtkinsonHyperlegible-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AtkinsonHyperlegible-Bold';
+  src: local('AtkinsonHyperlegible-Bold'),
+    url('../../../assets/fonts/AtkinsonHyperlegible-Bold.ttf') format('truetype');
+}
+
+.raleway {
+  font-family: 'AtkinsonHyperlegible', sans-serif;
+}
+.raleway-medium {
+  font-family: 'AtkinsonHyperlegible-Italic', sans-serif;
+}
+.raleway-bold {
+  font-family: 'AtkinsonHyperlegible-Bold', sans-serif;
+}
+
+.fwthin {
+  font-weight: 100;
+}
+.fwlight {
+  font-weight: 200;
+}
+.fwextralight {
+  font-weight: 300;
+}
+.fwnormal,
+.regular {
+  font-weight: normal;
+}
+.git {
+  font-weight: 600;
+}
+.fwbold {
+  font-weight: bold;
+}
+
+.fsitalic {
+  font-style: italic;
+}
+
+.lhn {
+  line-height: normal;
+}
+
+@media #{$small-screen} {
+  .mob__thin {
+    font-weight: 100;
+  }
+  .mob__light {
+    font-weight: 200;
+  }
+  .mob__extralight {
+    font-weight: 300;
+  }
+  .mob__normal,
+  .mob__regular {
+    font-weight: normal;
+  }
+  .mob__medium {
+    font-weight: 500;
+  }
+  .mob__bold {
+    font-weight: bold;
+  }
+  .mob__italic {
+    font-style: italic;
+  }
+  .mob__.lhn {
+    line-height: normal;
+  }
+}
+
+@for $i from 1 through 100 {
+  .fs#{$i} {
+    font-size: #{$i}px;
+  }
+  .fs-rem#{$i} {
+    font-size: #{$i}rem;
+  }
+  .lh#{$i} {
+    line-height: #{$i}px;
+  }
+  .fw#{$i} {
+    font-weight: #{$i};
+  }
+  @media #{$small-screen} {
+    .mob__fs#{$i} {
+      font-size: #{$i}px !important;
+    }
+    .mob__lh#{$i} {
+      line-height: #{$i}px !important;
+    }
+  }
+  @media #{$tablet-screen} {
+    .tab__fs#{$i} {
+      font-size: #{$i}px !important;
+    }
+    .tab__lh#{$i} {
+      line-height: #{$i}px !important;
+    }
+  }
+}
+
+@for $i from 1 through 10 {
+  .lttr_spc#{$i} {
+    letter-spacing: #{$i}px;
+  }
+  .line#{$i} {
+    -webkit-line-clamp: #{$i};
+  }
+}
+
+.notxtdeco {
+  text-decoration: none;
+}
+
+@for $i from 1 through 1000 {
+  .textmaxwoverflow#{$i} {
+    max-width: #{$i}px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

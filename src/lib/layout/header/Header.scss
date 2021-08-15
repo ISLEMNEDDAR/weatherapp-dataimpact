@@ -1,0 +1,12 @@
+@import './src/lib/styles/scss/colors';
+
+.header {
+  background: transparent;
+  min-height: 100px;
+  border-bottom: 1px solid $border;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+}
