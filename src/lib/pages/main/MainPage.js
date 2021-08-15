@@ -15,8 +15,8 @@ function MainPage() {
           <div className="flex f1 wall">
             <Search />
           </div>
-          <div className="flex f1">
-            <MapComponent />
+          <div className="flex f1 wall">
+            <MapComponent zoom={13} />
           </div>
         </div>
         <div className="flex f1">
