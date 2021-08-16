@@ -5,8 +5,6 @@ import WeatherDetail from '../../custom-component/weather-detail/WeatherDetail'
 import MapComponent from '../../custom-component/map/MapComponent'
 import useCurrentLocation from '../../hooks/useCurrentLocation'
 import useSearchByCor from '../../hooks/useSearchByCor'
-import { toastError } from '../../utils/toast.util'
-import { ACTIVATE_LOCALISATION, GEOLOCALISATION_DENIED } from '../../errors'
 import DefaultSmall from '../../responsive/DefaultSmall'
 import Desktop from '../../responsive/Desktop'
 import RenderContainerInMobile from '../../../components/containers/RenderContainerInMobile'
@@ -25,13 +23,9 @@ function MainPage() {
   const searchByCoordinate = useSearchByCor(location, error)
 
   useEffect(() => {
+    console.log(error)
     if (location) {
-      const { errorLocation, message } = searchByCoordinate.searchWithCurrent()
-      if (errorLocation) {
-        toastError(message)
-      }
-    } else if (error === GEOLOCALISATION_DENIED) {
-      toastError(ACTIVATE_LOCALISATION)
+      searchByCoordinate.searchWithCurrent()
     }
   }, [location, error]) // eslint-disable-line react-hooks/exhaustive-deps
 
