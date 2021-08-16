@@ -5,6 +5,18 @@ cette application utilise [OpenWeatherMap API](https://openweathermap.org/curren
 - avoir la meteo pour la postion actual .
 - avoir la meteo pour les prochain 5 jours.
 
+## link
+https://weatherappdataimpact.herokuapp.com/weather
+
+##Deploy
+using Gitlab Ci for the the creation of the simple pipeline
+and deploy on heroku
+
+## Code Metrics
+using eslint and stylelint to have a one style on a project
+using editorconfig because am using webStorm to have the same format in commits
+
+
 ## Env
 ```bash
   node -v
