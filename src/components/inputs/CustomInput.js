@@ -9,6 +9,7 @@ function CustomInput({
   rightIcon,
   rightClick,
   classNameContainer,
+  rightIconClassName,
 }) {
   return (
     <ClassicInput
@@ -24,6 +25,7 @@ function CustomInput({
       error={formik.errors[[name]] ? formik.errors[[name]] : ''}
       rightIcon={rightIcon}
       rightClick={rightClick}
+      rightIconClassName={rightIconClassName}
     />
   )
 }

@@ -1,0 +1,8 @@
+.item {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  &_selected {
+    border-bottom-color: #00acee;
+    background-color: #00acee10;
+  }
+}
