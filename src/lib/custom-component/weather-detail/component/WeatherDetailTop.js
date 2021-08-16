@@ -98,13 +98,21 @@ function WeatherDetailTop() {
         {weatherSelector.loading ? (
           <Loading minHeight={150} />
         ) : (
-          <div className="padv5">
-            {renderNamePaysAndate(weatherSelector.weather)}
-            <div className="flex fdr f2 marv35">
-              {renderCurrentWeather(weatherSelector.weather)}
-              {renderListOfindicator(weatherSelector.weather)}
-            </div>
-          </div>
+          <>
+            {weatherSelector.weather === {} || weatherSelector.weather === null ? (
+              <div>
+                <p> No information provided</p>
+              </div>
+            ) : (
+              <div className="padv5">
+                {renderNamePaysAndate(weatherSelector.weather)}
+                <div className="flex fdr f2 marv35">
+                  {renderCurrentWeather(weatherSelector.weather)}
+                  {renderListOfindicator(weatherSelector.weather)}
+                </div>
+              </div>
+            )}
+          </>
         )}
       </>
     )

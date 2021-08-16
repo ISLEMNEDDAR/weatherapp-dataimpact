@@ -58,6 +58,7 @@ const getListForcast = listForcastFromApi => {
         day,
         dayTime,
         mostUserIcon,
+        open: listForcast.length === 0,
       }
       listForcast.push(obj)
       listForcastDaily = []
@@ -65,7 +66,7 @@ const getListForcast = listForcastFromApi => {
     const mapped = mapDataToWeatherObjectTiny(timeWeather)
     listForcastDaily.push(mapped)
     lastKey = key
-    compteur = 1
+    compteur += 1
   })
   return listForcast
 }

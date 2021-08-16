@@ -37,6 +37,7 @@ export function* GET_WEATHER(payload) {
     yield put(dispatchAction(dayWeatherActions.SET_STATE, { loading: false }))
   } catch (err) {
     console.log(err)
+    yield put(dayWeatherActions.updateError({ message: 'internal Error, try later' }))
   }
 }
 
