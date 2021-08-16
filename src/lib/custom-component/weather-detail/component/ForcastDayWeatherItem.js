@@ -13,8 +13,8 @@ function ForcastDayWeatherItem({ nextDayWeather, showDetails, index, listToforca
   return (
     <>
       <div
-        aria-hidden
-        key={Math.random(12000)}
+        role="presentation"
+        key={index}
         className={`hover_item_forcast flex wall ${
           responsive.isMobile ? 'f2' : 'f3'
         } padv15 aic curptr padh5`}

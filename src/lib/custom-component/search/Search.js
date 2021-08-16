@@ -14,6 +14,7 @@ import weatherActions from '../../redux/weather/action'
 import { searchByObject } from '../../data/weather-concepts'
 import dayWeatherActions from '../../redux/daysWeather/action'
 import Selectors from '../../redux/selectors'
+import CitySelect from './CitySelect'
 
 function Search({ searchByCoordinate }) {
   // Hooks
@@ -27,9 +28,9 @@ function Search({ searchByCoordinate }) {
     city: stringValidation(
       labelCity,
       3,
-      'Enter au moins 3 charactere',
-      15,
-      'Entrer au max 15 caractere',
+      'Enter a minimum of 3 character',
+      20,
+      'Enter a maximum of 20 character',
     ),
   })
 
@@ -66,12 +67,13 @@ function Search({ searchByCoordinate }) {
   } */
 
   // Renders
+  // i didn't use this feat
   const renderChoosenItem = item => {
     switch (item) {
       case dataChoiceItemSearch.pays:
         return (
           <>
-            <p>fsfsfsdf</p>
+            <CitySelect />
           </>
         )
       case dataChoiceItemSearch.city:
@@ -82,7 +84,7 @@ function Search({ searchByCoordinate }) {
                 formikCity.handleSubmit()
               }}
               rightIcon={searchIcon}
-              placeholder="Entrer une cité"
+              placeholder="Enter a city"
               name="city"
               type="text"
               formik={formikCity}
@@ -132,7 +134,7 @@ function Search({ searchByCoordinate }) {
               rounded
               loadingText="Loading"
               buttonState={loading ? 'loading' : 'idle'}
-              idleText="Utiliser position courante"
+              idleText="use current position"
               onClick={() => {
                 // TODO if location == current not do this
                 searchByCoordinate.searchWithCurrent()

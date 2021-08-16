@@ -11,10 +11,19 @@ const useSearchByCor = (location, error) => {
   const { coordinateSelector } = Selectors()
   const searchWithCurrent = () => {
     if (location && !error) {
-      console.log(location)
-      const lat = location.latitude
-      const lon = location.longitude
-      if (lat === coordinateSelector.lat && lon === coordinateSelector.lon) {
+      console.log(coordinateSelector)
+      const lat = location.latitude.toFixed(4)
+      const lon = location.longitude.toFixed(4)
+      console.log(lat)
+      console.log(lon)
+      console.log(
+        Number(lat) === Number(coordinateSelector.lat) &&
+          Number(lon) === Number(coordinateSelector.lon),
+      )
+      if (
+        Number(lat) === Number(coordinateSelector.lat) &&
+        Number(lon) === Number(coordinateSelector.lon)
+      ) {
         return { errorLocation: false }
       }
       dispatch(coordianteeAction.updateCooriante(lat, lon))

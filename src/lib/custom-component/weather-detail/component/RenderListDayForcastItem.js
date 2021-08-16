@@ -3,11 +3,11 @@ import StyledText from '../../../../components/StyledText'
 import { weightFont } from '../../../styles/style'
 import dateUtil from '../../../utils/date.util'
 
-function RenderListDayForcastItem({ forcastDaily }) {
+function RenderListDayForcastItem({ forcastDaily, index }) {
   const hours = dateUtil.formatDateCustom(forcastDaily.date, 'h:mm A')
   const temperateur = `${forcastDaily.temperature}°`
   return (
-    <div className="flex wall f3 padv15 aic ">
+    <div key={index} className="flex wall f3 padv15 aic ">
       <div className="flex f1 aic jcc">
         <StyledText
           text={hours}

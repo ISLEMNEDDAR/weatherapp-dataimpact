@@ -1,7 +1,7 @@
 import * as yup from 'yup'
 
 export const stringValidation = (label, min, messageMin, max, messageMax) => {
-  let valid = yup.string()
+  let valid = yup.string().required('You have to enter a city')
   if (label) {
     valid = valid.label(label)
   }
