@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import * as yup from 'yup'
 import { useFormik } from 'formik'
 import ReactiveButton from 'reactive-button'
@@ -8,17 +8,18 @@ import { searchIcon } from '../../../assets/icons'
 import CustomInput from '../../../components/inputs/CustomInput'
 import { stringValidation } from '../../validations/validations'
 import Separator from '../../../components/separator/Separator'
-import ItemRole from '../../../components/containers/ItemRole'
-import { dataChoiceItemSearch, listChoice } from '../../data/data-choice-item-search'
+import { dataChoiceItemSearch } from '../../data/data-choice-item-search'
 import { dispatchAction } from '../../utils/dispatch.util'
 import weatherActions from '../../redux/weather/action'
 import { searchByObject } from '../../data/weather-concepts'
 import dayWeatherActions from '../../redux/daysWeather/action'
+import Selectors from '../../redux/selectors'
 
 function Search({ searchByCoordinate }) {
   // Hooks
-  const [loading] = useState(false)
-  const [choosenItem, setChoosenItem] = useState(dataChoiceItemSearch.pays)
+  const { weatherSelector } = Selectors()
+  const { loading } = weatherSelector
+  // const [choosenItem, setChoosenItem] = useState(dataChoiceItemSearch.pays)
   const dispatch = useDispatch()
   // formik
   const labelCity = 'city'
@@ -60,9 +61,9 @@ function Search({ searchByCoordinate }) {
     )
   }
 
-  const switchItemChoice = choiceItem => {
+  /* const switchItemChoice = choiceItem => {
     setChoosenItem(choiceItem)
-  }
+  } */
 
   // Renders
   const renderChoosenItem = item => {
@@ -99,7 +100,7 @@ function Search({ searchByCoordinate }) {
       <div className="flex hall wall padh10">
         <CardContainer>
           <div className="mar10">
-            <div className="flex fdr wall aic jcc marb10">
+            {/* <div className="flex fdr wall aic jcc marb10">
               {listChoice.map(choice => {
                 return (
                   <ItemRole
@@ -112,8 +113,8 @@ function Search({ searchByCoordinate }) {
                   />
                 )
               })}
-            </div>
-            <div>{renderChoosenItem(choosenItem)}</div>
+            </div> */}
+            <div>{renderChoosenItem(dataChoiceItemSearch.city)}</div>
           </div>
           <div className="marh30">
             <Separator
@@ -136,6 +137,7 @@ function Search({ searchByCoordinate }) {
                 // TODO if location == current not do this
                 searchByCoordinate.searchWithCurrent()
               }}
+              disabled={loading}
             />
           </div>
         </CardContainer>

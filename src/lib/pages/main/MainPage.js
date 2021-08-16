@@ -7,6 +7,9 @@ import useCurrentLocation from '../../hooks/useCurrentLocation'
 import useSearchByCor from '../../hooks/useSearchByCor'
 import { toastError } from '../../utils/toast.util'
 import { ACTIVATE_LOCALISATION, GEOLOCALISATION_DENIED } from '../../errors'
+import DefaultSmall from '../../responsive/DefaultSmall'
+import Desktop from '../../responsive/Desktop'
+import RenderContainerInMobile from '../../../components/containers/RenderContainerInMobile'
 
 function MainPage() {
   // variables
@@ -34,24 +37,46 @@ function MainPage() {
 
   // function
 
+  // render
+  const renderSearch = () => {
+    return (
+      <div className="flex wall">
+        <Search location={{ location, error }} searchByCoordinate={searchByCoordinate} />
+      </div>
+    )
+  }
+
+  const renderMap = () => {
+    return (
+      <div className="flex wall">
+        <MapComponent zoom={13} />
+      </div>
+    )
+  }
+
+  const renderWeatherDetail = () => {
+    return <WeatherDetail />
+  }
+
   return (
     <div className="wall">
       <div className="padh10">
         <ContentHeader />
       </div>
-      <div className="flex f2 wall marv20">
-        <div className="flex f1 fdc wall">
-          <div className="flex wall">
-            <Search location={{ location, error }} searchByCoordinate={searchByCoordinate} />
+      <Desktop>
+        <div className="flex f2 wall marv20">
+          <div className="flex f1 fdc wall">
+            {renderSearch()}
+            {renderMap()}
           </div>
-          <div className="flex wall">
-            <MapComponent zoom={13} />
-          </div>
+          <div className="flex f1">{renderWeatherDetail()}</div>
         </div>
-        <div className="flex f1">
-          <WeatherDetail />
-        </div>
-      </div>
+      </Desktop>
+      <DefaultSmall>
+        <RenderContainerInMobile>{renderSearch()}</RenderContainerInMobile>
+        <RenderContainerInMobile>{renderWeatherDetail()}</RenderContainerInMobile>
+        <RenderContainerInMobile>{renderMap()}</RenderContainerInMobile>
+      </DefaultSmall>
     </div>
   )
 }

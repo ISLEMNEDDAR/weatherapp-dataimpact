@@ -7,11 +7,14 @@ import Selectors from '../../../redux/selectors'
 import Loading from '../../../../components/loader/Loading'
 import { toastError } from '../../../utils/toast.util'
 import weatherActions from '../../../redux/weather/action'
+import useResponsive from '../../../hooks/useResponsive'
 
 function WeatherDetailTop() {
   // hooks
   const { weatherSelector } = Selectors()
   const dispatch = useDispatch()
+  const responsive = useResponsive()
+
   // renders
   const renderNamePaysAndate = weather => {
     const { city, country } = weather
@@ -41,7 +44,7 @@ function WeatherDetailTop() {
         </div>
         <div className="flex aic jcc fdc padl25">
           <h3 className="raleway-bold fs45">{temperateur}&deg;C</h3>
-          <span className="raleway-medium fs20">{description}</span>
+          <span className="raleway-medium fs20 txtac">{description}</span>
         </div>
       </div>
     )
@@ -59,7 +62,7 @@ function WeatherDetailTop() {
       { type: 'Humidity', value: humidity },
     ]
     return (
-      <div className="flex f1 aic jcc">
+      <div className={`flex f1 aic jcc ${responsive.isMobile ? 'mart15' : ''}`}>
         <div className="row">
           {listKPIWeather.map(kpi => {
             const kpiType = kpi.type
@@ -67,7 +70,7 @@ function WeatherDetailTop() {
             return (
               <div
                 key={`${kpiType}-${kpiValue}`}
-                className="col-md6 col-sm6 padv10 flex fdc jcc aic"
+                className="col-md6 col-sm6 col-xs6 padv10 flex fdc jcc aic"
               >
                 <h4 className="raleway-medium fs20 padb5">{kpiValue}</h4>
                 <span className="raleway fs15">{kpiType}</span>
@@ -96,7 +99,7 @@ function WeatherDetailTop() {
             ) : (
               <div className="padv5">
                 {renderNamePaysAndate(weatherSelector.weather)}
-                <div className="flex fdr f2 marv35">
+                <div className={`flex ${responsive.isMobile ? 'fdc' : 'fdr'} f2 marv35`}>
                   {renderCurrentWeather(weatherSelector.weather)}
                   {renderListOfindicator(weatherSelector.weather)}
                 </div>
