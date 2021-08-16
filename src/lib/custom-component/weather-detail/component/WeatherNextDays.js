@@ -114,8 +114,8 @@ function WeatherNextDays() {
     )
   }
   return (
-    <div>
-      <p>No information pro</p>
+    <div className="minh150 flex aic jcc">
+      <p>Aucune inforamtion Trouvées</p>
     </div>
   )
 }

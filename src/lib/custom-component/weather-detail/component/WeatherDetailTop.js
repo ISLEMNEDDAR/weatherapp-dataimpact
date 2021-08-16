@@ -53,34 +53,24 @@ function WeatherDetailTop() {
     const low = `${weather.temperature_min}°`
     const humidity = `${weather.humidity}%`
     const listKPIWeather = [
-      {
-        type: 'High',
-        value: high,
-      },
-      {
-        type: 'Wind',
-        value: wind,
-      },
-      {
-        type: 'Low ',
-        value: low,
-      },
-      {
-        type: 'Humidity',
-        value: humidity,
-      },
+      { type: 'High', value: high },
+      { type: 'Wind', value: wind },
+      { type: 'Low ', value: low },
+      { type: 'Humidity', value: humidity },
     ]
     return (
       <div className="flex f1 aic jcc">
         <div className="row">
           {listKPIWeather.map(kpi => {
+            const kpiType = kpi.type
+            const kpiValue = kpi.value
             return (
               <div
-                key={`${kpi.type}-${kpi.value}`}
+                key={`${kpiType}-${kpiValue}`}
                 className="col-md6 col-sm6 padv10 flex fdc jcc aic"
               >
-                <h4 className="raleway-medium fs20 padb5">{kpi.value}</h4>
-                <span className="raleway fs15">{kpi.type}</span>
+                <h4 className="raleway-medium fs20 padb5">{kpiValue}</h4>
+                <span className="raleway fs15">{kpiType}</span>
               </div>
             )
           })}
@@ -99,9 +89,9 @@ function WeatherDetailTop() {
           <Loading minHeight={150} />
         ) : (
           <>
-            {weatherSelector.weather === {} || weatherSelector.weather === null ? (
-              <div>
-                <p> No information provided</p>
+            {!weatherSelector.weather.temperature || weatherSelector.weather === null ? (
+              <div className="flex minh150 jcc aic">
+                <p> Choisie une ville</p>
               </div>
             ) : (
               <div className="padv5">
