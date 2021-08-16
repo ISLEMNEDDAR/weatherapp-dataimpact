@@ -5,8 +5,8 @@ function RenderListDayForcast({ nextDayWeather }) {
   const { listForcastDaily } = nextDayWeather
   return (
     <div className="item_forecast padh15">
-      {listForcastDaily.map(forcastDaily => {
-        return <RenderListDayForcastItem forcastDaily={forcastDaily} />
+      {listForcastDaily.map((forcastDaily, index) => {
+        return <RenderListDayForcastItem index={index} forcastDaily={forcastDaily} />
       })}
     </div>
   )
