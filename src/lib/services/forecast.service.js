@@ -13,7 +13,7 @@ const getForcastByCityAndCountry = async (city, country, cnt) => {
     {
       q: qDataToSend,
       units: units.metric,
-      cnt: cnt || 7,
+      cnt: cnt || 40,
       appid: WEATHER_KEY_API,
     },
   )
@@ -28,7 +28,7 @@ const getForecastByCoordiante = async (lat, lon, cnt) => {
     {
       lat,
       lon,
-      cnt: cnt || 7,
+      cnt: cnt || 40,
       units: units.metric,
       appid: WEATHER_KEY_API,
     },

@@ -1,7 +1,7 @@
 import dayWeatherActions from './action'
 
 const initialState = {
-  listDayswWeather: [],
+  listDaysWeather: [],
   loading: false,
   error: null,
 }

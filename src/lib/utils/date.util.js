@@ -1,5 +1,8 @@
 import moment from 'moment'
 
+require('moment/locale/fr')
+require('moment/locale/en-au')
+
 const convertDateToDateTime = dataEvaluation => {
   return moment.utc(dataEvaluation, 'YYYY-MM-DD')
 }
@@ -9,7 +12,9 @@ const formatDate = date => {
 }
 
 const formatDateCustom = (date, type) => {
-  return moment(date).format(type)
+  return moment(date)
+    .locale('en')
+    .format(type)
 }
 
 const difference = (date1, date2, unit) => {
