@@ -5,6 +5,8 @@ import dayWeatherActions from '../redux/daysWeather/action'
 import { searchByObject } from '../data/weather-concepts'
 import coordianteeAction from '../redux/coordinate/action'
 import Selectors from '../redux/selectors'
+import { toastError } from '../utils/toast.util'
+import { ACTIVATE_LOCALISATION } from '../errors'
 
 const useSearchByCor = (location, error) => {
   const dispatch = useDispatch()
@@ -42,6 +44,7 @@ const useSearchByCor = (location, error) => {
       return { errorLocation: false }
     }
     console.log('error')
+    toastError(ACTIVATE_LOCALISATION)
     return { errorLocation: true, message: "Can't get your current location" }
   }
   return {
